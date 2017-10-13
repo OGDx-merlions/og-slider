@@ -47,7 +47,7 @@
 
     },
 
-    ready: function() {
+    ready() {
       if (this.ranges && this.ranges.length > 0) {
         this.items = this.ranges;
         this.max = this.ranges.length -1;
@@ -69,7 +69,8 @@
     *
     * @method notifyResize
     */
-    notifyResize: function() {
+    notifyResize() {
+      console.log(this.$.slider);
       this.$.slider.notifyResize();
     },
 
@@ -78,7 +79,7 @@
     *
     * @method _changeSlider
     */
-    _changeSlider: function(e){
+    _changeSlider(e){
       var value = e.detail.value;
       this.fire("change-slider-root", {index: value-1});
     },

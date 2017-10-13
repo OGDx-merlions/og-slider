@@ -38,7 +38,8 @@
       <px-demo-component>
         <og-slider
           start="2"
-          ranges="{{props.ranges.defaultValue}}">
+          ranges="{{props.ranges.defaultValue}}"
+          on-change-slider-root="handleSliderChange">
         </og-slider>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
@@ -193,6 +194,10 @@
           ]
         }
       }
+    },
+
+    handleSliderChange: function() {
+      console.log(arguments)
     },
 
     /**
