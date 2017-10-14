@@ -26,7 +26,7 @@
     * Trigger of notification from the child px-slider component
     *
     * @method notifyResize
-    */notifyResize:function notifyResize(){console.log(this.$.slider);this.$.slider.notifyResize()},/**
+    */notifyResize:function notifyResize(){console.log(Polymer.dom('#slider'));Polymer.dom('#slider').notifyResize()},/**
     * Callback function for the listener, get the value and make it available for root component
     *
     * @method _changeSlider

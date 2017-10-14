@@ -70,8 +70,8 @@
     * @method notifyResize
     */
     notifyResize() {
-      console.log(this.$.slider);
-      this.$.slider.notifyResize();
+      console.log(Polymer.dom("#slider"));
+      Polymer.dom("#slider").notifyResize();
     },
 
     /**
