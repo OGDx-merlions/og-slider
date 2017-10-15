@@ -2,7 +2,7 @@
 
 ## Overview
 
-og-slider is a Predix UI component
+og-slider is a wrapper and based on the px-slider from Predix UI component
 
 ## Usage
 
@@ -31,7 +31,8 @@ Second, import the component to your application with the following tag in your 
 Finally, use the component in your application:
 
 ```
-Insert Your demo code here.
+<og-slider start="2" ranges="[[["January 2017", "February 2017", "March 2017"]]]" on-value-change="callbackFunction"></og-slider>
+
 ```
 
 <br />
@@ -39,7 +40,7 @@ Insert Your demo code here.
 
 ## Documentation
 
-Read the full API and view the demo [here](https://predixdev.github.io/og-slider).
+Read the full API and view the demo [here](https://github.com/OGDx-merlions/og-slider).
 
 The documentation in this repository is supplemental to the official Predix documentation, which is continuously updated and maintained by the Predix documentation team. Go to [http://predix.io](http://predix.io)  to see the official Predix documentation.
 

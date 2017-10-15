@@ -12,7 +12,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
 
 ### Usage
 
-    <og-slider ranges="[[["January 2017", "February 2017", "March 2017"]]]" on-change-slider-root="callbackFunction"></og-slider>
+    <og-slider start="2" ranges="[[["January 2017", "February 2017", "March 2017"]]]" on-value-change="callbackFunction"></og-slider>
 
 @element og-slider
 @blurb This component is a wrapper of the px-slider which adds small functionality.
@@ -93,33 +93,30 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         width: 100%;
       }
     </style>
-    <template is="dom-if" if="{{renderView}}">
-      <div id="og-slider-wrapper-container">
-        <px-slider
-          id="slider"
-          value="[[start]]"
-          min="0"
-          max="[[max]]"
-          step="1"
-          scale="linear"
-          exponent="2"
-          min-label-position="bottom"
-          max-label-position="bottom"
-          on-value-changed="_changeSlider"
-          hide-inputs>
-          </px-slider>
-          <div id="slider-background"></div>
-          <div id="labels" class="flex flex--row flex--justify flex--stretch">
-            <template is="dom-repeat" items="{{items}}">
-              <div class="label-item">
-                <div></div>
-                <p>[[ item ]]</p>
-              </div>
-            </template>
-          </div>
-      </div>
-    </template>
-    <template is="dom-if" if="{{!renderView}}">[[errorMessage]]</template>
+    <div id="og-slider-wrapper-container">
+      <px-slider
+        id="slider"
+        value="[[start]]"
+        min="0"
+        max="[[max]]"
+        step="1"
+        scale="linear"
+        exponent="2"
+        min-label-position="bottom"
+        max-label-position="bottom"
+        on-value-changed="_changeSlider"
+        hide-inputs>
+        </px-slider>
+        <div id="slider-background"></div>
+        <div id="labels" class="flex flex--row flex--justify flex--stretch">
+          <template is="dom-repeat" items="{{items}}">
+            <div class="label-item">
+              <div></div>
+              <p>[[ item ]]</p>
+            </div>
+          </template>
+        </div>
+    </div>
   </template>
 </dom-module>
 <script src="dist/og-slider.js"></script>

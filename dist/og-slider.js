@@ -7,10 +7,6 @@
       *
       * @property max
       */max:{type:Number,value:1},/**
-      * This property checks if the array pass has enough length to be displayed.
-      *
-      * @property renderView
-      */renderView:{type:Boolean,value:false},/**
       * This property display a default message when the condition to show is not fufilled.
       *
       * @property errorMessage
@@ -18,17 +14,17 @@
       * Data to be displayed
       *
       * @property ranges
-      */ranges:{type:Array,value:function value(){return[]}}},ready:function ready(){if(this.ranges&&this.ranges.length>0){this.items=this.ranges;this.max=this.ranges.length-1;this.renderView=true}},/**
+      */ranges:{type:Array,value:function value(){return[]}}},ready:function ready(){if(this.ranges&&this.ranges.length>0){this.items=this.ranges;this.max=this.ranges.length-1}},/**
     * Listen to the changeslider and send it back to root to be listened
     *
     * @method listeners
-    */listeners:{'changeSlider':'changeSliderRoot'},/**
+    */listeners:{'changeSlider':'valueChange'},/**
     * Trigger of notification from the child px-slider component
     *
     * @method notifyResize
-    */notifyResize:function notifyResize(){console.log(Polymer.dom('#slider'));Polymer.dom('#slider').notifyResize()},/**
+    */notifyResize:function notifyResize(){if(this.$.slider){this.$.slider.notifyResize()}},/**
     * Callback function for the listener, get the value and make it available for root component
     *
     * @method _changeSlider
-    */_changeSlider:function _changeSlider(e){var value=e.detail.value;this.fire('change-slider-root',{index:value-1})}})})();
+    */_changeSlider:function _changeSlider(e){this.fire('value-change',{value:e.detail.value})}})})();
 //# sourceMappingURL=og-slider.js.map

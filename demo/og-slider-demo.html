@@ -39,8 +39,11 @@
         <og-slider
           start="2"
           ranges="{{props.ranges.defaultValue}}"
-          on-change-slider-root="handleSliderChange">
+          on-value-change="handleSliderChange">
         </og-slider>
+        <br />
+        <br />
+        <p><label>Index (on-value-change):</label> <strong>[[index]]</strong></p>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
 
@@ -193,11 +196,15 @@
               configReset: true }
           ]
         }
+      },
+      index: {
+        type: Number,
+        value: 0,
       }
     },
 
-    handleSliderChange: function() {
-      console.log(arguments)
+    handleSliderChange: function(e) {
+      this.index = Number(e.detail.value);
     },
 
     /**
@@ -214,6 +221,10 @@
         defaultValue: ["Jan 2017", "Feb 2017", "March 2017", "Apr 2017", "Mar 2017", "May 2017"],
         inputType: 'code:JSON'
       },
+    },
+
+    ready: function() {
+      this.index = this.demoProps.start.defaultValue;
     }
   });
 </script>

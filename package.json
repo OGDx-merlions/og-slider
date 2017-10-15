@@ -1,14 +1,14 @@
 {
     "name": "og-slider",
     "author": "General Electric",
-    "description": "A Px component",
-    "version": "0.0.1",
+    "description": "A wrapper basede on px-slider predix component",
+    "version": "1.0.3",
     "private": true,
     "extName" : null,
     "repository" :
     {
         "type": "git",
-        "url": "https://github.com/PredixDev/og-slider.git"
+        "url": "https://github.com/OGDx-merlions/og-slider"
     },
     "homepage": "http://predix.io/",
     "devDependencies": {

@@ -19,13 +19,6 @@
       max: { type: Number, value: 1 },
 
       /**
-      * This property checks if the array pass has enough length to be displayed.
-      *
-      * @property renderView
-      */
-      renderView: { type: Boolean, value: false },
-
-      /**
       * This property display a default message when the condition to show is not fufilled.
       *
       * @property errorMessage
@@ -51,7 +44,6 @@
       if (this.ranges && this.ranges.length > 0) {
         this.items = this.ranges;
         this.max = this.ranges.length -1;
-        this.renderView = true;
       }
     },
 
@@ -61,7 +53,7 @@
     * @method listeners
     */
     listeners: {
-      'changeSlider': 'changeSliderRoot'
+      'changeSlider': 'valueChange'
     },
 
     /**
@@ -70,8 +62,9 @@
     * @method notifyResize
     */
     notifyResize() {
-      console.log(Polymer.dom("#slider"));
-      Polymer.dom("#slider").notifyResize();
+      if (this.$.slider) {
+        this.$.slider.notifyResize();
+      }
     },
 
     /**
@@ -80,8 +73,7 @@
     * @method _changeSlider
     */
     _changeSlider(e){
-      var value = e.detail.value;
-      this.fire("change-slider-root", {index: value-1});
+      this.fire("value-change", {value: e.detail.value});
     },
   });
 })();
