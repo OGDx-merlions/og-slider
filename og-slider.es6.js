@@ -40,12 +40,6 @@
       },
     },
 
-    ready() {
-      if (this.ranges && this.ranges.length > 0) {
-        this.max = this.ranges.length -1;
-      }
-    },
-
     /**
     * Listen to the changeslider and send it back to root to be listened
     *
@@ -82,6 +76,7 @@
     */
     _onUpdateValue: function(newValue, oldValue) {
       console.log(newValue, oldValue)
+      this.max = newValue.length -1;
     }
   });
 })();

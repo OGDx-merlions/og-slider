@@ -30,5 +30,5 @@
     * Observer callback updating the change of property data for ranges
     *
     * @method _onUpdateValue
-    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){console.log(newValue,oldValue)}})})();
+    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){console.log(newValue,oldValue);this.max=newValue.length-1}})})();
 //# sourceMappingURL=og-slider.js.map
