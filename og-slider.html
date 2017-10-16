@@ -96,9 +96,9 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
     <div id="og-slider-wrapper-container">
       <px-slider
         id="slider"
-        value="[[start]]"
+        value="{{start}}"
         min="0"
-        max="[[max]]"
+        max="{{max}}"
         step="1"
         scale="linear"
         exponent="2"
@@ -109,7 +109,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         </px-slider>
         <div id="slider-background"></div>
         <div id="labels" class="flex flex--row flex--justify flex--stretch">
-          <template is="dom-repeat" items="{{items}}">
+          <template is="dom-repeat" items="{{ranges}}">
             <div class="label-item">
               <div></div>
               <p>[[ item ]]</p>

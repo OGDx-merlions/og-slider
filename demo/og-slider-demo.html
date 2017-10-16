@@ -38,12 +38,16 @@
       <px-demo-component>
         <og-slider
           start="2"
-          ranges="{{props.ranges.defaultValue}}"
+          ranges="{{props.ranges.value}}"
           on-value-change="handleSliderChange">
         </og-slider>
         <br />
         <br />
         <p><label>Index (on-value-change):</label> <strong>[[index]]</strong></p>
+
+        <div>
+          <button on-click="switchData">Switch data</button>
+        </div>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
 
@@ -63,6 +67,9 @@
 
 </dom-module>
 <script>
+  const calendar = ["Jan 2017", "Feb 2017", "March 2017", "Apr 2017", "Mar 2017", "May 2017"];
+  const animals = ["Cat", "Elephant", "Dog", "Bird", "Whale"];
+
   Polymer({
     is: 'og-slider-demo',
 
@@ -218,13 +225,30 @@
       },
       ranges: {
         type: Array,
-        defaultValue: ["Jan 2017", "Feb 2017", "March 2017", "Apr 2017", "Mar 2017", "May 2017"],
+        notifify: true,
+        observer: '_monitorChanges',
+        value: calendar,
         inputType: 'code:JSON'
       },
     },
 
     ready: function() {
       this.index = this.demoProps.start.defaultValue;
+    },
+
+    switchData: function() {
+      if (this.props.ranges.value === animals) {
+        this.props.ranges.value = calendar;
+      }
+      else {
+        this.props.ranges.value = animals;
+      }
+
+      console.warn("Not currently working on demo", this.props.ranges.value);
+    },
+
+    _monitorChanges: function() {
+      console.log(this.ranges)
     }
   });
 </script>

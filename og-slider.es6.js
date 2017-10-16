@@ -32,17 +32,16 @@
       */
       ranges: {
         type: Array,
+        observer:'_onUpdateValue',
+        notify: true,
         value() {
           return [];
         }
       },
-
-
     },
 
     ready() {
       if (this.ranges && this.ranges.length > 0) {
-        this.items = this.ranges;
         this.max = this.ranges.length -1;
       }
     },
@@ -75,5 +74,14 @@
     _changeSlider(e){
       this.fire("value-change", {value: e.detail.value});
     },
+
+    /**
+    * Observer callback updating the change of property data for ranges
+    *
+    * @method _onUpdateValue
+    */
+    _onUpdateValue: function(newValue, oldValue) {
+      console.log(newValue, oldValue)
+    }
   });
 })();
