@@ -24,7 +24,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
   <template>
     <style include="og-slider-styles">
       :host {
-        --px-slider-border-color: transparent;
+        /* --px-slider-border-color: transparent;
         --px-slider-background-color: transparent;
 
         --px-slider-border-color--selected: transparent;
@@ -38,47 +38,54 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
 
         --px-handle-background-color: #b2bec4;
         --px-handle-background-color--hover: #3a4850;
-        --px-handle-background-color--active: #3a4850;
+        --px-handle-background-color--active: #3a4850; */
       }
       #og-slider-wrapper-container {
         position: relative;
-        height: 100px;
+        height: 6.25rem;
       }
       #labels {
         position: absolute;
-        margin: 0 14px;
-        left: 0; right: 0; top: 80px;
+        left: 0; right: 0; top: 5.8rem;
         color: #677e8c;
-        font-size: 12px;
+        font-size: 0.75rem;
+        /* display: table; */
+        width: 100%;
       }
       .label-item {
+        /* display: table-cell; */
         position: relative;
+        text-align: center;
       }
       .label-item p {
         margin: 0;
-        padding-left: 4px;
+        position: relative;
+        top: 0.5rem;
+        /* padding-left: 4px; */
       }
       .label-item div {
         position: absolute;
+        margin: auto;
         left: 0;
-        bottom: 4px;
-        height: 20px;
+        right: 0;
+        height: 1.25rem;
+        /* top: -55px; */
         width: 1px;
         background: #677e8c;
+        bottom: 0.625rem;
       }
       #labels .label-item:first-child div,
       #labels .label-item:nth-last-child(2) div {
-        height: 35px;
+        height: 2.1875rem;
       }
-      #labels .label-item:nth-last-child(2) div {
-        right: 0;
-        left: initial;
+      #labels .label-item:first-child {
+        left: -0.5rem;
       }
-      #labels .label-item:nth-last-child(2) p {
-        padding: 0;
-        padding-right: 4px;
+      #labels .label-item:nth-last-child(2) {
+        right: -0.5rem;
       }
       #slider-background {
+        display: none;
         height: 9px;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
         position: absolute;
@@ -108,7 +115,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         hide-inputs>
         </px-slider>
         <div id="slider-background"></div>
-        <div id="labels" class="flex flex--row flex--justify flex--stretch">
+        <div id="labels" class="flex flex--row flex--justify flex--top">
           <template is="dom-repeat" items="{{ranges}}">
             <div class="label-item">
               <div></div>
