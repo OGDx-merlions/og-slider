@@ -75,7 +75,6 @@
     * @method _onUpdateValue
     */
     _onUpdateValue: function(newValue, oldValue) {
-      console.log(newValue, oldValue)
       this.max = newValue.length -1;
     }
   });

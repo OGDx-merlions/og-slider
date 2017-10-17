@@ -14,7 +14,7 @@
       * Data to be displayed
       *
       * @property ranges
-      */ranges:{type:Array,observer:'_onUpdateValue',notify:true,value:function value(){return[]}}},ready:function ready(){if(this.ranges&&this.ranges.length>0){this.max=this.ranges.length-1}},/**
+      */ranges:{type:Array,observer:'_onUpdateValue',notify:true,value:function value(){return[]}}},/**
     * Listen to the changeslider and send it back to root to be listened
     *
     * @method listeners
@@ -30,5 +30,5 @@
     * Observer callback updating the change of property data for ranges
     *
     * @method _onUpdateValue
-    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){console.log(newValue,oldValue);this.max=newValue.length-1}})})();
+    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){this.max=newValue.length-1}})})();
 //# sourceMappingURL=og-slider.js.map

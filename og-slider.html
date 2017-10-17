@@ -46,7 +46,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
       }
       #labels {
         position: absolute;
-        left: 0; right: 0; top: 5.8rem;
+        left: 0; right: 0; top: 5.3rem;
         color: #677e8c;
         font-size: 0.75rem;
         /* display: table; */
@@ -63,7 +63,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         top: 0.5rem;
         /* padding-left: 4px; */
       }
-      .label-item div {
+      .label-item .bar {
         position: absolute;
         margin: auto;
         left: 0;
@@ -74,15 +74,15 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         background: #677e8c;
         bottom: 0.625rem;
       }
-      #labels .label-item:first-child div,
-      #labels .label-item:nth-last-child(2) div {
+      #labels .label-item:first-child .bar,
+      #labels .label-item:nth-last-child(2) .bar {
         height: 2.1875rem;
       }
       #labels .label-item:first-child {
-        left: -0.5rem;
+        left: -6px;
       }
       #labels .label-item:nth-last-child(2) {
-        right: -0.5rem;
+        right: -6px;
       }
       #slider-background {
         display: none;
@@ -118,7 +118,9 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         <div id="labels" class="flex flex--row flex--justify flex--top">
           <template is="dom-repeat" items="{{ranges}}">
             <div class="label-item">
-              <div></div>
+              <template is="dom-if" if="{{item.length}}">
+                <div class="bar"></div>
+              </template>
               <p>[[ item ]]</p>
             </div>
           </template>
