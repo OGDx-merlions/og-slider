@@ -46,43 +46,47 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
       }
       #labels {
         position: absolute;
-        left: 0; right: 0; top: 5.3rem;
+        left: 15px; right: 0;
+        bottom: -.4rem;
         color: #677e8c;
-        font-size: 0.75rem;
         /* display: table; */
-        width: 100%;
+        width: calc(100% - 30px);
+        height: 20px;
       }
       .label-item {
         /* display: table-cell; */
         position: relative;
-        text-align: center;
+        /* text-align: center; */
       }
       .label-item p {
-        margin: 0;
-        position: relative;
-        top: 0.5rem;
-        /* padding-left: 4px; */
+        font-size: 0.75rem;
+        position: absolute;
+        bottom: -.3rem;
+        text-align: center;
+        left: -50px;
+        width: 100px;
+        margin: auto;
       }
       .label-item .bar {
         position: absolute;
         margin: auto;
-        left: 0;
-        right: 0;
+        /* left: 0; */
+        /* right: 0; */
         height: 1.25rem;
-        /* top: -55px; */
+        bottom: 0.80rem;
         width: 1px;
         background: #677e8c;
-        bottom: 0.625rem;
+        /* bottom: -.3rem; */
       }
       #labels .label-item:first-child .bar,
       #labels .label-item:nth-last-child(2) .bar {
         height: 2.1875rem;
       }
       #labels .label-item:first-child {
-        left: -6px;
+        /* left: -6px; */
       }
       #labels .label-item:nth-last-child(2) {
-        right: -6px;
+        /* right: -6px; */
       }
       #slider-background {
         display: none;
@@ -118,9 +122,7 @@ REPLACE THIS TEXT WITH A COMPONENT DESCRIPTION
         <div id="labels" class="flex flex--row flex--justify flex--top">
           <template is="dom-repeat" items="{{ranges}}">
             <div class="label-item">
-              <template is="dom-if" if="{{item.length}}">
-                <div class="bar"></div>
-              </template>
+              <div hidden$="{{_isEmpty(item)}}" class="bar"></div>
               <p>[[ item ]]</p>
             </div>
           </template>

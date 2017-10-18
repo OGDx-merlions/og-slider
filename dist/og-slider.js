@@ -30,5 +30,9 @@
     * Observer callback updating the change of property data for ranges
     *
     * @method _onUpdateValue
-    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){this.max=newValue.length-1}})})();
+    */_onUpdateValue:function _onUpdateValue(newValue,oldValue){this.max=newValue.length-1},/**
+    * Check if string is empty or null
+    *
+    * @method _isEmpty
+    */_isEmpty:function _isEmpty(item){if(item.length<1)return true;return false},attached:function attached(){var svg=document.querySelector('.handleBody');if(svg){svg.style.strokeWidth='.5rem';svg.style.fill='#889aa5'}}})})();
 //# sourceMappingURL=og-slider.js.map

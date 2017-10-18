@@ -76,6 +76,24 @@
     */
     _onUpdateValue: function(newValue, oldValue) {
       this.max = newValue.length -1;
+    },
+
+    /**
+    * Check if string is empty or null
+    *
+    * @method _isEmpty
+    */
+    _isEmpty: function(item) {
+      if (item.length < 1) return true;
+      return false;
+    },
+
+    attached: function() {
+      const svg = document.querySelector('.handleBody');
+      if (svg) {
+        svg.style.strokeWidth = ".5rem";
+        svg.style.fill = "#889aa5";
+      }
     }
   });
 })();
